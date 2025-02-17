@@ -23,10 +23,6 @@ db.connect(err => {
     console.log("✅ Connected to MySQL Database!");
 });
 
-app.get("/", (req, res) => res.sendFile(path.join(__dirname, "public", "menu.html")));
-app.get("/order", (req, res) => res.sendFile(path.join(__dirname, "public", "order.html")));
-app.get("/payment", (req, res) => res.sendFile(path.join(__dirname, "public", "payment.html")));
-
 // Fetch menu items
 app.get("/api/menu", (req, res) => {
     db.query("SELECT * FROM menu_items", (err, result) => {
