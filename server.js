@@ -1,102 +1,3 @@
-// const express = require("express");
-// const mysql = require("mysql2");
-// const cors = require("cors");
-// const path = require("path");
-// const bodyParser = require("body-parser");
-
-// const app = express();
-// app.use(cors());
-// app.use(express.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
-
-// app.use(express.static(path.join(__dirname, "public")));
-
-// const db = mysql.createConnection({
-//     host: "localhost",
-//     user: "root",
-//     password: "",
-//     database: "foodorderingdb"
-// });
-
-// db.connect(err => {
-//     if (err) throw err;
-//     console.log("✅ Connected to MySQL Database!");
-// });
-
-// app.get("/", (req, res) => res.sendFile(path.join(__dirname, "public", "menu.html")));
-// app.get("/order", (req, res) => res.sendFile(path.join(__dirname, "public", "order.html")));
-// app.get("/payment", (req, res) => res.sendFile(path.join(__dirname, "public", "payment.html")));
-
-
-// app.get("/api/menu", (req, res) => {
-//     db.query("SELECT * FROM menu_items", (err, result) => {
-//         if (err) return res.status(500).send(err);
-//         res.json(result);
-//     });
-// });
-
-// app.post("/api/order", (req, res) => {
-//     const { items, total_price, payment_method } = req.body;
-//     console.log("Received items:", items); 
-//     console.log("Total Price:", total_price); // Fix the variable name
-//     console.log("Payment Method:", payment_method);
-
-//     if (!items || !total_price || !payment_method) {
-//         return res.status(400).json({ error: "Missing required fields" });
-//     }
-
-//     const sql = "INSERT INTO orders (items, total_price, payment_method) VALUES (?, ?, ?)";
-//     db.query(sql, [JSON.stringify(items), total_price, payment_method], (err, result) => {
-//         if (err) {
-//             console.error("Database Error:", err);
-//             return res.status(500).json({ error: "Database error", details: err });
-//         }
-//         res.json({ message: "✅ Order Placed!", order_id: result.insertId });
-//     });
-// });
-
-// app.listen(3000, () => console.log("🚀 Server running on http://localhost:3000"));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const express = require("express");
 const mysql = require("mysql2");
 const cors = require("cors");
@@ -111,10 +12,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "foodorderingdb"
+    host: "sql12.freesqldatabase.com",
+    user: "sql12763237",
+    password: "VSFHTbeS67",
+    database: "sql12763237"
 });
 
 db.connect(err => {
